@@ -33,8 +33,10 @@ const Questions = ({ question }) => {
           </div>
           
           <p className="display-time">
-          {question.upVote.length >=4 && <span style={{color:'white', backgroundColor:'#f48024', padding:'3px 5px',borderRadius:'20px' ,fontSize:'10px', margin:'2px'}}>Popular</span>}
-          
+          {question.upVote.length >=4 && 
+          <span style={{color:'white', backgroundColor:'#f48024', padding:'3px 5px',borderRadius:'20px' ,fontSize:'10px', margin:'2px'}}>Popular</span>
+          }
+          {question.upVote.length >=2 && <span style={{color:'white', backgroundColor:'skyBlue', padding:'3px 5px',borderRadius:'20px' ,fontSize:'10px', margin:'2px'}}>Famous</span>}
             asked {moment(question.askedOn).fromNow()} {question.userPosted}
             
          

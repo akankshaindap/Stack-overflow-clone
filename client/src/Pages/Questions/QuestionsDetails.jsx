@@ -161,9 +161,10 @@ const QuestionsDetails = () => {
                           <span style={{margin:'3px',fontWeight:'bold',color:'grey'}}>{question.upVote.length}</span>
                           <div className="badgeDetails">Earned {question.upVote.length} Gold Badges</div>
                             </>
-                                
                                            }
+                                           
                                            </div>
+
                         </div>
                       </div>
                     </div>
