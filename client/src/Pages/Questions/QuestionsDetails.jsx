@@ -23,7 +23,7 @@ const QuestionsDetails = () => {
   const dispatch = useDispatch();
   const User = useSelector((state) => state.currentUserReducer);
   const location = useLocation();
-  const url = "http://localhost:3000";
+  const url = "https://stack-overflow-eight.vercel.app";
 
   const handlePostAns = (e, answerLength) => {
     e.preventDefault();
