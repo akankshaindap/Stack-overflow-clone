@@ -15,6 +15,7 @@ const Navbar = ({ handleSlideIn }) => {
   var User = useSelector((state) => state.currentUserReducer);
   const navigate = useNavigate();
 
+  
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
     navigate("/");
@@ -65,7 +66,7 @@ const Navbar = ({ handleSlideIn }) => {
             <>
               <Avatar
                 backgroundColor="#009dff"
-                px="10px"
+                px="15px"
                 py="7px"
                 borderRadius="50%"
                 color="white"

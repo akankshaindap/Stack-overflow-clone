@@ -1,22 +1,20 @@
 import mongoose from "mongoose";
-import User from "../models/auth.js";
+import users from "../models/auth.js";
 
 export const getAllUsers = async (req, res) => {
-
   try {
-    const allUsers = await User.find();
+    const allUsers = await users.find();
     const allUserDetails = [];
     allUsers.forEach((user) => {
       allUserDetails.push({
-        _id:user.id,
+        _id: user._id,
         name: user.name,
         about: user.about,
         tags: user.tags,
         joinedOn: user.joinedOn,
       });
     });
-    
-    res.status(500).json(allUserDetails);
+    res.status(200).json(allUserDetails);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
@@ -31,7 +29,7 @@ export const updateProfile = async (req, res) => {
   }
 
   try {
-    const updatedProfile = await User.findByIdAndUpdate(
+    const updatedProfile = await users.findByIdAndUpdate(
       _id,
       { $set: { name: name, about: about, tags: tags } },
       { new: true }
