@@ -28,7 +28,7 @@ const QuestionsDetails = () => {
   const handlePostAns = (e, answerLength) => {
     e.preventDefault();
     if (User === null) {
-      alert("Login or Signup to answer a question");
+      alert("Login or SignUp to answer a question");
       Navigate("/Auth");
     } else {
       if (Answer === "") {
@@ -58,7 +58,7 @@ const QuestionsDetails = () => {
 
   const handleUpVote = () => {
     if (User === null) {
-      alert("Login or Signup to up vote a question");
+      alert("Login or SignUp to up vote a question");
       Navigate("/Auth");
     } else {
       dispatch(voteQuestion(id, "upVote"));
@@ -73,6 +73,7 @@ const QuestionsDetails = () => {
       dispatch(voteQuestion(id, "downVote"));
     }
   };
+
   return (
     <div className="question-details-page">
       {questionsList.data === null ? (
@@ -141,8 +142,28 @@ const QuestionsDetails = () => {
                             </Avatar>
                             
                             <div>{question.userPosted}</div>
-                            {question.upVote.length >= 1 && <span style={{backgroundColor:'gold', width:'10px' ,height:'10px', borderRadius:'50%', margin:'10px'}}> </span>}
+                           
                           </Link>
+                          <div className="badges"style={{
+                              display:'flex' ,marginLeft:"40px", marginTop:'-10px', cursor:'pointer'}}>
+                            {question.upVote.length >= 6 &&  
+                            <>
+                            <span style={{
+                              backgroundColor: 'gold',
+                              width: '8px', 
+                              height: '8px',
+                              borderRadius: '50%',
+                              marginTop: '10px',
+                            
+                            }}>
+
+                            </span>
+                          <span style={{margin:'3px',fontWeight:'bold',color:'grey'}}>{question.upVote.length}</span>
+                          <div className="badgeDetails">Earned {question.upVote.length} Gold Badges</div>
+                            </>
+                                
+                                           }
+                                           </div>
                         </div>
                       </div>
                     </div>

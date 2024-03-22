@@ -124,6 +124,26 @@
   white-space: pre-line;
 }
 
+.badgeDetails{
+  visibility: hidden;
+  width: 80px;
+  background-color: rgb(104, 99, 99);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px 2px;
+  font-size: 12px;
+  margin: 20px;
+  position: absolute;
+  z-index: 1;
+  
+}
+.badges:hover  .badgeDetails{
+  visibility: visible;
+    
+
+}
+
 @media screen and (max-width: 1020px) {
   .question-details-page {
     width: calc(100% - 24px);

@@ -110,10 +110,24 @@
   .slide-in-icon {
     display: block;
   }
+ 
 }
 
 @media screen and (max-width: 620px) {
   .navbar .navbar-1 .res-nav {
     display: none;
   }
+  .nav-links{
+    padding: 5px 5px;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+@media screen and (max-width:312px){
+  .nav-links{
+    padding: 5px 5px;
+    font-size: 14px;
+    margin: 0;
+  }
+  
 }
